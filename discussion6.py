@@ -69,7 +69,10 @@ class HorseRaces:
             results[horse_name] = {}
 
             for i in range(len(race_names)):
-                results[horse_name][race_names[i]] = float(race_times[i])
+                try:
+                    results[horse_name][race_names[i]] = float(row[i+1])
+                except ValueError:
+                    continue
         return results
 
 
