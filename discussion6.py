@@ -123,7 +123,7 @@ class HorseRaces:
         best = {}
 
         for horse in self.race_dict:
-            best[horse] = self.horse_fastest_race[horse]
+            best[horse] = self.horse_fastest_race(horse)
         return best
 
 ###############################################################################
@@ -140,7 +140,7 @@ class HorseRaces:
         '''
         averages = {}
 
-        for horse, races in self.race_dict:
+        for horse, races in self.race_dict.items():
             total = sum(races.values())
             num_races = len(races)
             averages[horse] = total / num_races
